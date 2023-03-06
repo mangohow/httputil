@@ -12,7 +12,7 @@ import (
 
 var onlyOneSignalShot = make(chan struct{})
 
-func SetupSignalHandler() context.Context {
+func SetupSignalHandler(_ logger.Logger) context.Context {
 	close(onlyOneSignalShot)
 
 	c := make(chan os.Signal, 1)
