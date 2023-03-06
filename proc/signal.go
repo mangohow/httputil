@@ -33,6 +33,7 @@ func SetupSignalHandler(log logger.Logger) context.Context {
 
 				switch sig {
 				case syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT:
+					log.Infof("receive signal %s", sig.String())
 					if exit {
 						os.Exit(0)
 					}
